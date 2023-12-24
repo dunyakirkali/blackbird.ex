@@ -35,4 +35,15 @@ defmodule Blackbird do
 
   """
   def ki(_, y), do: y
+
+  @doc """
+  S Combinator
+
+  ## Examples
+
+      iex> Blackbird.s(&Kernel.==/2, &Kernel.abs/1).(-12)
+      false
+
+  """
+  def s(f, g), do: fn x -> f.(x, g.(x)) end
 end
