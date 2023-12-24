@@ -48,6 +48,7 @@ defmodule Blackbird do
   def s(f, g), do: fn x -> f.(x, g.(x)) end
 
   @doc """
+
   B Combinator
 
   ## Examples
@@ -57,4 +58,15 @@ defmodule Blackbird do
 
   """
   def b(f, g), do: fn x -> f.(g.(x)) end
+
+  @doc """
+  C Combinator
+
+  ## Examples
+
+      iex> Blackbird.c(&Kernel.div/2).(2, 6)
+      3
+
+  """
+  def c(f), do: fn x, y -> f.(y, x) end
 end
