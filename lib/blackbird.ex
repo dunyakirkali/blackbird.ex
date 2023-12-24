@@ -113,4 +113,15 @@ defmodule Blackbird do
 
   """
   def psi(f, g), do: fn x, y -> f.(g.(x), g.(y)) end
+
+  @doc """
+  PHI Combinator
+
+  ## Examples
+
+      iex> Blackbird.phi(&Kernel.abs/1, &Kernel.*/2, &Kernel.-/1).(-5)
+      25
+
+  """
+  def phi(f, g, h), do: fn x -> g.(f.(x), h.(x)) end
 end
