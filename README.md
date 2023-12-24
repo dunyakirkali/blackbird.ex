@@ -1,6 +1,9 @@
 # Blackbird
 
-**TODO: Add description**
+Inspired by [code_report](https://codereport.github.io/)'s [awesome
+talk](https://www.youtube.com/watch?v=JELcdZLre3s);
+                                                                                       TThis
+module implements all the combinators in Elixir.
 
 ## Installation
 
@@ -18,4 +21,3 @@ end
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/blackbird>.
-
