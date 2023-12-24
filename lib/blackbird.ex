@@ -69,4 +69,15 @@ defmodule Blackbird do
 
   """
   def c(f), do: fn x, y -> f.(y, x) end
+
+  @doc """
+  W Combinator
+
+  ## Examples
+
+      iex> Blackbird.w(&Kernel.div/2).(2)
+      1
+
+  """
+  def w(f), do: fn x -> f.(x, x) end
 end
