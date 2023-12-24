@@ -80,4 +80,15 @@ defmodule Blackbird do
 
   """
   def w(f), do: fn x -> f.(x, x) end
+
+  @doc """
+  D Combinator
+
+  ## Examples
+
+      iex> Blackbird.d(&Kernel.==/2, &Kernel.abs/1).(12, -12)
+      true
+
+  """
+  def d(f, g), do: fn x, y -> f.(x, g.(y)) end
 end
