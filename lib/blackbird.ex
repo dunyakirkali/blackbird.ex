@@ -91,4 +91,15 @@ defmodule Blackbird do
 
   """
   def d(f, g), do: fn x, y -> f.(x, g.(y)) end
+
+  @doc """
+  B1 Combinator
+
+  ## Examples
+
+      iex> Blackbird.b1(&Kernel.abs/1, &Kernel.*/2).(5, -5)
+      25
+
+  """
+  def b1(f, g), do: fn x, y -> f.(g.(x, y)) end
 end
